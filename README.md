@@ -41,9 +41,12 @@ use yii\helpers\Url;
 use yii\web\Controller;
 
 /**
- * Class SiteController
- *
- * @package app\controllers
+ * @SWG\Swagger(
+ *     basePath="/",
+ *     produces={"application/json"},
+ *     consumes={"application/x-www-form-urlencoded"},
+ *     @SWG\Info(version="1.0", title="Simple API"),
+ * )
  */
 class SiteController extends Controller
 {
@@ -61,8 +64,12 @@ class SiteController extends Controller
                 'class' => 'yii2mod\swagger\SwaggerApiAction',
                 // Тhe list of directories that contains the swagger annotations.
                 'scanDir' => [
-                    Yii::getAlias('@app/modules/api'),
+                    Yii::getAlias('@app/controllers'),
+                    Yii::getAlias('@app/models'),
                 ],
+            ],
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
             ],
         ];
     }
@@ -78,7 +85,9 @@ First, create a controller class `app\controllers\UserController` as follows:
 ```php
 namespace app\controllers;
 
-use yii\rest\ActiveController;
+use app\models\User;
+use yii\data\ActiveDataProvider;
+use yii\rest\Controller;
 
 /**
  * Class UserController
@@ -91,7 +100,7 @@ class UserController extends Controller
      *     summary="Retrieves the collection of User resources.",
      *     @SWG\Response(
      *         response = 200,
-     *         description = "Category collection response",
+     *         description = "User collection response",
      *         @SWG\Schema(ref = "#/definitions/User")
      *     ),
      * )
@@ -101,21 +110,20 @@ class UserController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => User::find(),
         ]);
-        
+
         return $dataProvider;
     }
 }
 ```
-The controller class extends from `yii\rest\ActiveController`, which implements a common set of RESTful actions. 
 
 2) Creating `User` definition
 
-You need to create folder `definitions` and add `User` definition class as follows:
+You need to create folder `app/models/definitions` and add `User` definition class as follows:
 
 ```php
 <?php
 
-namespace api\models\definitions;
+namespace app\models\definitions;
 
 /**
  * @SWG\Definition(required={"username", "email"})
@@ -160,6 +168,10 @@ Trying it Out
 Now you can access to swagger documentation section through the following URL:
 
 http://localhost/path/to/index.php?r=site/docs
+
+**View in the browser**
+
+![Alt text](http://res.cloudinary.com/igor-chepurnoi/image/upload/v1507979632/Swagger_UI_chpeo6.png "Swagger Documentation")
 
 
 
