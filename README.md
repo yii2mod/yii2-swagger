@@ -171,7 +171,7 @@ http://localhost/path/to/index.php?r=site/docs
 
 **View in the browser**
 
-![Alt text](http://res.cloudinary.com/igor-chepurnoi/image/upload/v1507979632/Swagger_UI_chpeo6.png "Swagger Documentation")
+![Alt text](http://res.cloudinary.com/igor-chepurnoi/image/upload/v1507979787/Swagger_UI_ps89ih.png "Swagger Documentation")
 
 
 
