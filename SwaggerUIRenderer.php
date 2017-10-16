@@ -5,11 +5,11 @@ namespace yii2mod\swagger;
 use yii\base\Action;
 
 /**
- * Class SwaggerAction
+ * Class SwaggerUIRenderer renders the UI (HTML/JS/CSS).
  *
  * @package yii2mod\swagger
  */
-class SwaggerAction extends Action
+class SwaggerUIRenderer extends Action
 {
     /**
      * @var string the rest url configuration

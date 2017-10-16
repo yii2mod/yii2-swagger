@@ -10,11 +10,11 @@ use yii\di\Instance;
 use yii\web\Response;
 
 /**
- * Class SwaggerApiAction
+ * Class OpenAPIRenderer is responsible for generating the JSON spec.
  *
- * @package yii2mod\swagger
+ * @package yii2mod\swagger\actions
  */
-class SwaggerApiAction extends Action
+class OpenAPIRenderer extends Action
 {
     /**
      * @var string|array|\Symfony\Component\Finder\Finder The directory(s) or filename(s).
