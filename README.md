@@ -11,6 +11,7 @@ Swagger/OpenAPI Documentation Generator for Yii2 Framework.
 [![Latest Stable Version](https://poser.pugx.org/yii2mod/yii2-swagger/v/stable)](https://packagist.org/packages/yii2mod/yii2-swagger)
 [![Total Downloads](https://poser.pugx.org/yii2mod/yii2-swagger/downloads)](https://packagist.org/packages/yii2mod/yii2-swagger)
 [![License](https://poser.pugx.org/yii2mod/yii2-swagger/license)](https://packagist.org/packages/yii2mod/yii2-swagger)
+[![Build Status](https://travis-ci.org/yii2mod/yii2-swagger.svg?branch=master)](https://travis-ci.org/yii2mod/yii2-swagger)
 
 Installation
 ------------
