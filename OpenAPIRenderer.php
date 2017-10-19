@@ -39,6 +39,11 @@ class OpenAPIRenderer extends Action
     public $cache = 'cache';
 
     /**
+     * @var int default duration in seconds before the cache will expire
+     */
+    public $cacheDuration = 360;
+
+    /**
      * @var string the key used to store swagger data in cache
      */
     public $cacheKey = 'api-swagger-cache';
@@ -72,9 +77,13 @@ class OpenAPIRenderer extends Action
      */
     protected function getSwaggerDocumentation(): Swagger
     {
+        if (!$this->cache instanceof Cache) {
+            return \Swagger\scan($this->scanDir, $this->scanOptions);
+        }
+
         return $this->cache->getOrSet($this->cacheKey, function () {
             return \Swagger\scan($this->scanDir, $this->scanOptions);
-        }, 360);
+        }, $this->cacheDuration);
     }
 
     /**
