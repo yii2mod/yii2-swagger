@@ -179,5 +179,7 @@ http://localhost/path/to/index.php?r=site/docs
 ![Alt text](http://res.cloudinary.com/igor-chepurnoi/image/upload/v1507979787/Swagger_UI_ps89ih.png "Swagger Documentation")
 
 
+## Support us
 
-
+Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/yii2mod). 
+All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
